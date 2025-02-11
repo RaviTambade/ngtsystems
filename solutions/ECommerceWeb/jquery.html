@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>TFL Store</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    </head>
+    <body>
+        <h1>TFL Store</h1>
+        <ol>
+            <li>Gerbera</li>
+            <li>Rose</li>
+            <li>Lotus</li>
+        </ol>
+        <hr/>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                    <td>    
+                        <input type="email" name="email" id="email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                    <td>    
+                        <input type="password" name="password" id="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>    
+                        <button id="loginBtn">Login</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            // jQuery for handling form validation
+            $(document).ready(function() {
+                $('#loginBtn').on('click', function() {
+                    var emailAddress = $('#email').val();
+                    var password = $('#password').val();
+                    
+                    if (emailAddress === "ravi.tambade@transflower.in" && password === "seed") {
+                        console.log("Welcome");
+                    } else {
+                        console.log("Invalid");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>TFL Store</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> <!-- AngularJS CDN -->
+    </head>
+    <body ng-app="tflStoreApp" ng-controller="LoginController">
+        <h1>TFL Store</h1>
+        <ol>
+            <li>Gerbera</li>
+            <li>Rose</li>
+            <li>Lotus</li>
+        </ol>
+        <hr/>
+        <div>
+            <form ng-submit="onValidate()">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="email">Email</label>
+                        </td>
+                        <td>    
+                            <input type="email" name="email" id="email" ng-model="user.email" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Password</label>
+                        </td>
+                        <td>    
+                            <input type="password" name="password" id="password" ng-model="user.password" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>    
+                            <button type="submit">Login</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <script>
+            // AngularJS Application Module and Controller
+            var app = angular.module('tflStoreApp', []);
+            
+            app.controller('LoginController', function($scope) {
+                $scope.user = {
+                    email: '',
+                    password: ''
+                };
+
+                // Validation function for login
+                $scope.onValidate = function() {
+                    if ($scope.user.email === "ravi.tambade@transflower.in" && $scope.user.password === "seed") {
+                        console.log("Welcome");
+                    } else {
+                        console.log("Invalid");
+                    }
+                };
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>TFL STore</h1>
+        <ol>
+            <li>Gerbera</li>
+            <li>Rose</li>
+            <li>Lotus</li>
+        </ol>
+        <hr/>
+        <div>
+            
+                <table>
+                    <tr>
+                        <td>
+                            <label>Email</label>
+                        </td>
+                        <td>    
+                            <input type="email" name="email" id="email"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Password</label>
+                        </td>
+                        <td>    
+                            <input type="password" name="password" id="password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>    
+                            <button onclick="onValidate()">Login</button>
+                        </td>
+                    </tr>
+                </table>
+             
+        </div>
+        <script>
+
+            function onValidate(){
+                let emailAddress=document.getElementById("email").value;
+                let password=document.getElementById("password").value;
+                if(emailAddress=== "ravi.tambade@transflower.in" &&
+                    password==="seed"
+                )
+                {
+
+                    console.log("Welcome");
+                }
+                else{
+                    console.log("invalid");
+
+                }
+                
+                
+            }
+        </script>
+    </body>
+</html>

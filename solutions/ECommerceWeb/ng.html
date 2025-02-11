@@ -12,6 +12,12 @@
         </ol>
         <hr/>
         <div>
+            <ol >
+                <li ng-repeat="user in users">{{user.email}}   {{user.password}}</li>
+            </ol>
+        </div>
+
+        <div>
             <form ng-submit="onValidate()">
                 <table>
                     <tr>
@@ -49,6 +55,13 @@
                     email: '',
                     password: ''
                 };
+
+                $scope.users=[
+                {email: 'ravi.tambade@transflower.in', password: '123'},
+                {email: 'ajinkya.Kulkarni@transflower.in', password: '123'},
+                {email: 'manisha.pant@transflower.in', password: '123'},
+                {email: 'rajeev.gandhi@transflower.in', password: '123'}
+                ];
 
                 // Validation function for login
                 $scope.onValidate = function() {

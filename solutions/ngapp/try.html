@@ -5,10 +5,10 @@
       </script>
    </head>
    
-   <body>
+   <body ng-app = "mainApp">
       <h2>AngularJS Sample Application</h2>
-      <div ng-app = "mainApp" ng-controller = "UserController">
-         <p>Enter a number: <input type = "number" ng-model = "number" /></p>
+      <hr/>
+      <div  ng-controller = "UserController">
          <button ng-click = "getAll()">Get All Users</button>
          <h2>Users</h2>
         <ul>
@@ -19,28 +19,29 @@
       <script>
         var mainApp = angular.module("mainApp", []);
         
-        mainApp.factory('PeopleService', function() {
-        var factory = {};
-            
-        factory.getAll = function(a, b) {
-            return [{ name: 'Ravi Tambade', email: 'ravi.tambade@transflower.in' },
-                    { name: 'Sameer Patil', email: 'sameer.patil@gmail.com' },
-                    { name: 'Manisha Pant', email: 'manisha.pant@gmail.com' }]
+        mainApp.factory('UsersFactory', function() {
+         var factory = {};  
+         factory.getAll = function() {
+               return [
+                  { name: 'Ravi Tambade', email: 'ravi.tambade@transflower.in' },
+                  { name: 'Sameer Patil', email: 'sameer.patil@gmail.com' },
+                  { name: 'Manisha Pant', email: 'manisha.pant@gmail.com' }
+               ]
             }
-            return factory;
+         return factory;
          });
 
-         mainApp.service('UserService', function(PeopleService) {
+         mainApp.service('UserService', function(UsersFactory) {
             this.getUsers = function(a) {
-               return PeopleService.getAll(a,a);
+               return UsersFactory.getAll(a,a);
             }
          });
+
          mainApp.controller('UserController', function($scope, UserService) {
             $scope.getAll = function() {
                $scope.users = UserService.getUsers($scope.number);
             }
          });
       </script>
-      
    </body>
 </html>

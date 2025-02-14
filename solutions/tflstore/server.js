@@ -33,6 +33,17 @@ app.use(function(req, res,next){
    next();
 })
 
+
+// Simple route to simulate authentication
+app.post('/login', (req, res) => {
+   const { email, password } = req.body;
+   if (email === 'ravi.tambade@transflower.in' && password === 'seed') {
+       res.json({ success: true });
+   } else {
+       res.json({ success: false });
+   }
+});
+
 //Router configuration
 var routes=require("./router");
 routes(app);

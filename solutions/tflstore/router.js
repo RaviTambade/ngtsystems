@@ -35,5 +35,7 @@ module.exports=function(app){
        .put(shoppingCartController.put)
        .get(shoppingCartController.getById)
        .delete(shoppingCartController.delete);
+
+   
 };
 

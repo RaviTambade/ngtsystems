@@ -57,6 +57,13 @@ app.controller('MainController', function($scope){
    $scope.Ravi.certification= "MCT";
    $scope.Ravi.age=42;
    $scope.Ravi.joinDate="1997-12-22";
+
+   $scope.Sachin = {};
+   $scope.Sachin.name = "Ravi Tambade";
+   $scope.Sachin.technology  = ".NET";
+   $scope.Sachin.certification= "MCT";
+   $scope.Sachin.age=42;
+   $scope.Sachin.joinDate="1997-12-22";
    
    
    });
